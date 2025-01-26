@@ -11,11 +11,8 @@ export interface Props extends Omit<HTMLAttributes<HTMLLIElement>, "id"> {
   clone?: boolean;
   collapsed?: boolean;
   depth: number;
-  disableInteraction?: boolean;
-  disableSelection?: boolean;
   ghost?: boolean;
   handleProps?: PropsWithRef<ActionProps>;
-  indicator?: boolean;
   indentationWidth: number;
   value: string;
   onCollapse?(): void;
@@ -29,12 +26,9 @@ export const TreeItem = forwardRef<HTMLDivElement, Props>(
       childCount,
       clone,
       depth,
-      disableSelection,
-      disableInteraction,
       ghost,
       handleProps,
       indentationWidth,
-      indicator,
       collapsed,
       onCollapse,
       onRemove,
@@ -50,10 +44,7 @@ export const TreeItem = forwardRef<HTMLDivElement, Props>(
         className={classNames(
           styles.Wrapper,
           clone && styles.clone,
-          ghost && styles.ghost,
-          indicator && styles.indicator,
-          disableSelection && styles.disableSelection,
-          disableInteraction && styles.disableInteraction
+          ghost && styles.ghost
         )}
         ref={wrapperRef}
         style={

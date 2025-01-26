@@ -1,9 +1,6 @@
 import type {UniqueIdentifier} from '@dnd-kit/core';
 import {arrayMove} from '@dnd-kit/sortable';
-
 import type {FlattenedItem, TreeItem, TreeItems} from './types';
-
-export const iOS = /iPad|iPhone|iPod/.test(navigator.platform);
 
 function getDragDepth(offset: number, indentationWidth: number) {
   return Math.round(offset / indentationWidth);
