@@ -1,5 +1,7 @@
 #root {
   width: 50vw;
+  height: 40vh;
   padding: 2rem;
   text-align: center;
+  overflow: auto;
 }

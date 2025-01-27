@@ -192,7 +192,7 @@ export function SortableEmployeeTree({
   }
 
   function handleDragMove({ delta }: DragMoveEvent) {
-    setOffsetLeft(delta.x);
+    setOffsetLeft(-delta.x);
   }
 
   function handleDragOver({ over }: DragOverEvent) {
