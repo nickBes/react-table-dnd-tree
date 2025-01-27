@@ -1,21 +1,19 @@
-import type {MutableRefObject} from 'react';
-import type {UniqueIdentifier} from '@dnd-kit/core';
+import type { MutableRefObject } from "react";
+import { Row } from "@tanstack/react-table";
 
-export interface TreeItem {
-  id: UniqueIdentifier;
-  children: TreeItem[];
-  collapsed?: boolean;
+export interface Employee {
+  id: string;
+  name: string;
+  position: string;
+  department: string;
+  managerId: string | null;
 }
 
-export type TreeItems = TreeItem[];
-
-export interface FlattenedItem extends TreeItem {
-  parentId: UniqueIdentifier | null;
-  depth: number;
-  index: number;
+export interface EmployeeNode extends Employee {
+  subordinates: EmployeeNode[];
 }
 
 export type SensorContext = MutableRefObject<{
-  items: FlattenedItem[];
+  items: Row<EmployeeNode>[];
   offset: number;
 }>;
